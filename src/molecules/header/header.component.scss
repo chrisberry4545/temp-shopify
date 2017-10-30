@@ -1,0 +1,15 @@
+@import './styles/<!--partnerName--settings-->';
+@import './styles/tools';
+
+.c-header {
+    padding: 13px 43px 9px 50px;
+    box-shadow: 0 1px 6px 0 transparentize($black-color, 0.9);
+    background-color: transparentize($white-color, 0.1);
+}
+
+    .c-header__link {
+        width: 135px;
+        display: inline-block;
+        text-align: center;
+        border-right: 1px solid #979797;
+    }

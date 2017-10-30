@@ -1,0 +1,6 @@
+{
+    "extends": "@kite-tech-ltd/tslint/tslint.json",
+    "rules": {
+        "quotemark": [true, "single"]
+    }
+}

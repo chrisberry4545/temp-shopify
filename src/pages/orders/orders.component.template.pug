@@ -1,0 +1,28 @@
+doctype html
+div Orders
+
+table
+    thead
+        tr
+            td Order Id
+            td Date
+            td Customer
+            td Status
+            td Your profit
+            td Reprint
+
+    tbody
+        tr(
+            *ngFor="let order of orders.results",
+        )
+            td {{ order.shopify_order_name }}{{ order.test ? " [Test]" : "" }}
+            td {{ order.created }}
+            td {{ order.customer.name }}
+            td {{ returnOrderStatus(order) }}
+            td
+            td
+                ng-container(*ngIf="order.reprint_requested; else showReprintButton")
+                    span Reprinted
+
+                ng-template(#showReprintButton)
+                    button.c-btn.c-btn--primary Reprint

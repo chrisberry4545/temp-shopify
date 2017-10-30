@@ -1,0 +1,22 @@
+{
+    "moduleFileExtensions": [
+        "js",
+        "jsx",
+        "json",
+        "ts",
+        "tsx"
+    ],
+    "transform": {
+        "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "collectCoverageFrom": [
+        "src/**/*.{ts}",
+        "!**/{vendor,index,*.module,*.data}.ts",
+        "!src/app/**",
+        "!dist/**/*",
+        "!**/node_modules/**",
+        "!**/vendor/**"
+    ],
+    "testRegex": ".*spec.ts$",
+    "mapCoverage": true
+}

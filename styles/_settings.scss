@@ -1,0 +1,11 @@
+@import './styles/settings/settings.config';
+@import './node_modules/inuitcss/settings/settings.core';
+@import './styles/settings/settings.custom-colors';
+
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.colors';
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.sizes';
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.animations';
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.font-family';
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.font-weights';
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.fonts';
+@import './node_modules/@kite-tech-ltd/kite-components/styles/settings/settings.z-index';

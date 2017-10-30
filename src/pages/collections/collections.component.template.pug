@@ -1,0 +1,98 @@
+doctype html
+
+div(
+    *ngIf="isLoading",
+)
+    .c-loading-spinner.u-center-in-parent
+
+.c-collections(
+    *ngIf="!isLoading",
+)
+    .c-collections__search-bar
+        span.c-text-s Search Collections
+        .c-collections__search-bar__input-wrapper
+            input.c-collections__search-bar__input(
+                type="text",
+                [(ngModel)]="searchValue",
+                (keyup)="searchChanged()",
+            )
+            svg.c-icon.c-collections__search-bar__icon
+                use(
+                    [svgHref]="'#search-icon'",
+                )
+    
+    .c-collections__card(
+        (click)="addNew()",
+    )
+        .u-center-in-parent
+            a.c-collections__add-new
+                .c-collections__add-new__icon-border
+                    svg.c-icon.c-collections__add-new__icon.u-center-in-parent
+                        use(
+                            [svgHref]="'#plus-icon'",
+                        )
+                span.c-text-m.c-collections__full-card-state-label.c-collections__add-new__label
+                    | ADD NEW
+
+    .c-collections__card(
+        *ngFor="let collection of visibleCollections",
+    )
+        ng-container([ngSwitch]="collection.uploadingState")
+            .c-collections__collection-image.c-collections__collection-image--empty(
+                *ngSwitchCase="UPLOADING_STATES.UPLOADING",
+            )
+                .c-collections__upload-progress.u-center-in-parent
+                    progress-loading-spinner-component.c-collections__spinner(
+                        [spinnerProgress]="collection.uploadProgressPercentage",
+                    )
+            
+            .u-center-in-parent(
+                *ngSwitchCase="UPLOADING_STATES.ERROR",
+            )
+                button(
+                    (click)="retryUpload(collection)"
+                ) Retry icon
+                div Failed
+
+            .c-collections__card__inner(
+                *ngSwitchDefault,
+            )
+                .c-collections__collection-image(
+                    [style.backgroundImage]="'url(' + collection.image_url_preview + ')'",
+                )
+                    .c-collections__collection-image__overlay
+                    a.c-btn.c-collections__view-btn.u-center-in-parent(
+                        href="#/products/?selected_product_range=[[ $index ]]",
+                    ) View
+                
+                .c-collections__info 
+                    h4.c-text-l.c-collections__info__header.u-single-line-text
+                        | {{ collection.title ? collection.title : 'Untitled' }}
+                    span.c-text-s.c-collections__info__number-of-products N Products
+
+                .c-collections__published-toggle
+                    .c-text-s.c-collections__published-toggle__label Unpublished
+                    toggle-component(
+                        [isOn]="false",
+                        (onToggle)="togglePublishState($event, collection)",
+                    )
+
+            button.c-collections__delete-btn(
+                (click)="showDeleteModal(collection)",
+            )
+                svg.c-icon.c-icon--white.u-center-in-parent
+                    use(
+                        [svgHref]="'#delete-icon'",
+                    )
+
+modal-component.c-default-modal(
+    *ngIf="isDeleteModalVisible()",
+)
+    h3.c-title-l.c-default-modal__header Delete product range
+    p.c-text-l.c-default-modal__text Are you sure that you want to delete this product range?
+    button.c-btn.c-btn--outline.c-btn--med.c-default-modal__btn(
+        (click)="closeDeleteModal()",
+    ) No
+    button.c-btn.c-btn--med.c-btn--dark.c-default-modal__btn(
+        (click)="deleteCollection()",
+    ) Yes

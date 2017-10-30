@@ -1,0 +1,223 @@
+@import './styles/<!--partnerName--settings-->';
+@import './styles/tools';
+
+.c-collections {
+    padding-top: 29px;
+    padding-left: 40px;
+    max-width: 1054px;
+}
+    $c-product-ranges__card-margins: 18px;
+    .c-collections__search-bar {
+        text-align: right;
+        margin-bottom: 39px - $c-product-ranges__card-margins;
+        margin-right: $c-product-ranges__card-margins;
+    }
+
+        .c-collections__search-bar__input-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .c-collections__search-bar__input {
+            height: 32px;
+            width: 322px;
+            border: 1px solid $grey-middle;
+            border-radius: 30px;
+            box-shadow: none;
+            background: $white-color;
+            margin-bottom: 0;
+            padding-left: 30px;
+        }
+
+        .c-collections__search-bar__icon {
+            @include setSvgColor($grey-middle);
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            pointer-events: none;
+        }
+
+    .c-collections__card {
+        $collections-card-size: 302px;
+        position: relative;
+        border-radius: 2px;
+        background: $white-color;
+        height: $collections-card-size;
+        width: $collections-card-size;
+        float: left;
+        margin: $c-product-ranges__card-margins;
+        padding: 13px 14px 13px 11px;
+        box-shadow: 0 5px 6px 1px rgba(0,0,0,0.06);
+
+        &:hover {
+            .c-collections__delete-btn {
+                opacity: 1;
+            }
+            .c-collections__view-btn {
+                opacity: 1;
+            }
+            .c-collections__collection-image__overlay {
+                opacity: 0.6;
+            }
+        }
+    }
+
+        .c-collections__card__inner {
+            width: 100%;
+            height: 100%;
+        }
+
+        .c-collections__add-new {
+            &:hover {
+                text-decoration: none;
+
+                $hover-color: lighten($black-color, 25%);
+
+                .c-collections__add-new__icon-border {
+                    border-color: $hover-color;
+                    transition: border-color $default-animation-enter;
+                }
+
+                .c-collections__add-new__label {
+                    color: $hover-color;
+                    transition: color $default-animation-enter;
+                }
+
+                .c-collections__add-new__icon {
+                    @include setSvgColor($hover-color);
+                    transition: stroke $default-animation-enter, fill $default-animation-enter;
+                }
+            }
+        }
+
+            .c-collections__add-new__icon-border {
+                position: relative;
+                display: block;
+                margin: auto;
+                margin-bottom: 20px;
+                text-align: center;
+                border-radius: 50%;
+                height: 65px;
+                width: 65px;
+                border: 4px solid $black-color;
+                transition: border-color $default-animation-exit;
+            }
+
+            .c-collections__add-new__icon {
+                width: 33px;
+                height: 33px;
+                @include setSvgColor($black-color);
+                transition: stroke $default-animation-exit, fill $default-animation-exit;
+            }
+
+            .c-collections__add-new__label {
+                transition: color $default-animation-exit;
+            }
+            
+        .c-collections__spinner {
+            min-height: 40px;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .c-collections__full-card-state-label {
+            color: $black-color;
+            display: block;
+            font-weight: $font-weight-semi-bold;
+        }
+
+        .c-collections__delete-btn {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: $warning-color-b;
+            border: none;
+            box-shadow: 0 2px 6px 1px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity $default-animation-basic, background-color $default-animation-exit;
+
+            &:hover {
+                background-color: lighten($warning-color-b, $hover-lighten-percent);
+                transition: background-color $default-animation-enter;
+            }
+        }
+
+        .c-collections__collection-image {
+            max-width: 100%;
+            height: 219px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 11px;
+            position: relative;
+        }
+
+            .c-collections__collection-image--empty {
+                background-color: $grey-light;
+            }
+
+            .c-collections__collection-image__overlay {
+                @include fill-parent();
+                background-color: $white-color;
+                opacity: 0;
+                transition: opacity $default-animation-basic;
+            }
+
+        .c-collections__view-btn, .c-collections__view-btn:visited {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            border: 3px solid $grey-super-dark;
+            width: 127px;
+            color: $grey-super-dark;
+            opacity: 0;
+            text-align: center;
+            text-decoration: none;
+            transition: color $default-animation-exit, background $default-animation-exit, opacity $default-animation-basic;
+
+            &:hover {
+                text-decoration: none;
+                background: $grey-super-dark;
+                color: $white-color;
+                transition: color $default-animation-enter, background $default-animation-enter
+            }
+        }
+
+        $c-product-ranges__info-width: 57%;
+        .c-collections__info {
+            max-width: $c-product-ranges__info-width;
+            float: left;
+        }
+
+            .c-collections__info__header {
+                margin: 0;
+                color: $black-color;
+            }
+
+            .c-collections__info__number-of-products {
+                color: $grey-middle;
+            }
+
+        .c-collections__published-toggle {
+            max-width: 100% - $c-product-ranges__info-width;
+            float: right;
+        }
+
+            .c-collections__published-toggle__label {
+                margin-top: 3px;
+                margin-right: 7px;
+                display: inline-block;
+            }
+
+            .c-collections__published-toggle__toggle {
+                float: right;
+                min-width: 42px;
+            }
