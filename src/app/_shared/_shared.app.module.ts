@@ -12,6 +12,7 @@ import {
     AccountModule,
     CollectionsModule,
     OrdersModule,
+    ProductEditModule,
     ProductsModule,
 } from './../../pages/index';
 
@@ -38,6 +39,7 @@ import {
         OrdersModule,
         HeaderModule,
         RouterModule.forRoot(rootRouterConfig, { useHash: true }),
+        ProductEditModule,
         ProductsModule,
     ],
     providers: [

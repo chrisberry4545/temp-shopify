@@ -23,6 +23,14 @@ export {
 } from './orders/orders.component';
 
 export {
+    default as ProductEditModule,
+} from './product-edit/product-edit.module';
+
+export {
+    default as ProductEditComponent,
+} from './product-edit/product-edit.component';
+
+export {
     default as ProductsModule,
 } from './products/products.module';
 
