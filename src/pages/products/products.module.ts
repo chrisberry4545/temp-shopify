@@ -6,9 +6,14 @@ import 'zone.js';
 import ProductsComponent from './products.component';
 
 import {
+    DropdownSelectBoxModule,
     MultiFilterModule,
     ToggleModule,
-} from '@kite-tech-ltd/kite-components/src/elements/index';
+} from './../../../node_modules/@kite-tech/kite-components/src/elements/index';
+
+import {
+    SvgHrefModule,
+} from '@kite-tech/kite-components/src/helpers/directives/index';
 
 @NgModule({
     declarations: [
@@ -16,7 +21,9 @@ import {
     ],
     imports: [
         CommonModule,
+        DropdownSelectBoxModule,
         MultiFilterModule,
+        SvgHrefModule,
         ToggleModule,
     ],
 })

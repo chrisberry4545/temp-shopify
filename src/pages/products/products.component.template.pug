@@ -4,19 +4,24 @@
         a.c-products__title-row__back-link.c-text-m(
             href="#/collections",
     )
-            svg.c-icon
+            svg.c-icon.c-products__title-row__back-link__icon
                 use(
                     [svgHref]="'#arrow-line-icon'",
                 )    
-            | All Collections
+            span All Collections
 
 
         h2.c-title-m.c-products__title-row__title Collection
     
     .c-products__filter-row
-        multi-filter-component(
+        multi-filter-component.c-products__filter-row__multi-filter(
             [possibleFilters]="['FILTER 1', '2 FILTERS', 'FILTERS OTHER']",
             [noneAppliedText]="'ALL PRODUCTS'",
+        )
+
+        dropdown-select-box-component.c-products__filter-row__dropdown-select-box(
+            [options]="{ enabled: 'ENABLED', disabled: 'DISABLED' }",
+            [value]="'enabled'",
         )
 
     .c-products__card(

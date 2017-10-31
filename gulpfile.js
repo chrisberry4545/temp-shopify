@@ -1,3 +1,3 @@
-require('@kite-tech-ltd/gulp-tasks')(
+require('@kite-tech/gulp-tasks')(
     require('./gulpfile.config')
 );

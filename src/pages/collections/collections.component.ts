@@ -14,7 +14,7 @@ import {
 import {
     ANIMATION_DEFAULTS_CONST,
     fadeInOutAnimation,
-} from '@kite-tech-ltd/kite-components/src/helpers/animations/index';
+} from '@kite-tech/kite-components/src/helpers/animations/index';
 
 const UPLOADING_STATES = {
     COMPLETE: 'COMPLETE',

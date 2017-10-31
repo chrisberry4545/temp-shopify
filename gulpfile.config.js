@@ -77,7 +77,7 @@ const config = {
         configVendor: './rollup-config/rollup.config.vendor.js',
     },
     svgConfig: {
-        svgPath: './node_modules/@kite-tech-ltd/kite-components/assets/svg/*.svg',
+        svgPath: './node_modules/@kite-tech/kite-components/assets/svg/*.svg',
         htmlFilePath: './index.html',
     },
     tsConfig: 'tsconfig.json',

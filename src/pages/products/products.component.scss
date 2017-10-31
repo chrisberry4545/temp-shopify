@@ -18,6 +18,10 @@
             float: left;
         }
 
+            .c-products__title-row__back-link__icon {
+                transform: translateY(6px);
+            }
+
         .c-products__title-row__title {
             display: inline-block;
             margin: 0;
@@ -29,11 +33,19 @@
         margin-bottom: 34px;
     }
 
+        .c-products__filter-row__multi-filter {
+            display: inline-block;
+        }
+
+        .c-products__filter-row__dropdown-select-box {
+            float: right;
+        }
+
     .c-products__card {
         float: left;
         margin-right: 36px;
         margin-bottom: 36px;
-        width: 270px;
+        width: 302px;
         border-radius: 2px;
         background-color: $white-color;
         padding: 16px 16px 17px 16px;

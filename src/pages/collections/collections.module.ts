@@ -11,11 +11,11 @@ import {
     ModalModule,
     ProgressLoadingSpinnerModule,
     ToggleModule,
-} from '@kite-tech-ltd/kite-components/src/elements/index';
+} from './../../../node_modules/@kite-tech/kite-components/src/elements/index';
 
 import {
     SvgHrefModule,
-} from '@kite-tech-ltd/kite-components/src/helpers/directives/index';
+} from '@kite-tech/kite-components/src/helpers/directives/index';
 
 @NgModule({
     declarations: [
@@ -28,8 +28,8 @@ import {
         BrowserModule,
         CommonModule,
         FormsModule,
-        ModalModule,
-        ProgressLoadingSpinnerModule,
+            ModalModule,
+            ProgressLoadingSpinnerModule,
         SvgHrefModule,
         ToggleModule,
     ],

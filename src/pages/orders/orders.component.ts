@@ -11,7 +11,7 @@ import {
 import {
     ANIMATION_DEFAULTS_CONST,
     fadeInOutAnimation,
-} from '@kite-tech-ltd/kite-components/src/helpers/animations/index';
+} from '@kite-tech/kite-components/src/helpers/animations/index';
 
 @Component({
     animations: [

@@ -17,7 +17,7 @@ import {
 
 import {
     DisableScrollingService,
-} from '@kite-tech-ltd/kite-components/src/helpers/services/index';
+} from '@kite-tech/kite-components/src/helpers/services/index';
 
 import {
     HeaderModule,
